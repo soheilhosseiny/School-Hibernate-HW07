@@ -14,7 +14,6 @@ public class Main {
         }
         Thread thread = new Thread(new MyThread(studentRepository));
         thread.start();
-        thread.setPriority(1);
 
     }
 }

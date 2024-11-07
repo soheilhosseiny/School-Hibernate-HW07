@@ -13,9 +13,9 @@ public class MyThread implements Runnable {
 
     @Override
     public void run() {
-        List<Student> students = studentRepository.findAll();
-        int n = students.size();
         while (true) {
+            List<Student> students = studentRepository.findAll();
+            int n = students.size();
             System.out.println(n);
             try {
                 Thread.sleep(1234,1);
