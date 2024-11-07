@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Setter
@@ -19,6 +20,15 @@ public class Teacher extends BaseModel {
     private String lastName;
     @Column(name = "national_code", unique = true)
     private String nationalCode;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+    @Embedded
+    private Address address;
+//    private Date dob;
+//    private String country;
+//    private String city;
+//    private String street;
+//    private String zipCode;
 
     @OneToOne
     @JoinColumn(name = "fk_course")

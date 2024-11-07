@@ -25,6 +25,17 @@ public class Student extends BaseModel {
     public String lastname;
     @Column(name = "national_code", unique = true)
     private String nationalCode;
+    @Temporal(TemporalType.DATE)
+    private Date dob;
+    @Embedded
+    private Address address;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+//    private String country;
+//    private String city;
+//    private String street;
+//    private String zipCode;
+
 
     @ManyToMany
     @JoinTable(
